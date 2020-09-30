@@ -1,0 +1,39 @@
+.feature-box {
+    background-color: rgba($color-white, .8);
+    font-size: 1.45rem;
+    text-align: center;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .3);
+    padding: 4rem 1.2rem 3rem 1.2rem;
+    border-radius: 4px;
+    line-height: 2.4rem;
+    transition: transform .3s;
+    backface-visibility: hidden;
+
+    @include respond(tab-port) {
+        padding: 5rem;
+    }
+
+    &__icon {
+        display: inline-block;
+        font-size: 6rem;
+        background: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+
+        @include respond(tab-port) {
+            margin-bottom: 1rem;
+            padding: 1rem;
+        }
+    }
+
+    &__title {
+        margin-top: 1rem;
+    }
+
+    &:hover {
+        transform: translateY(-1rem) scale(1.03);
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
+        backface-visibility: hidden;
+    }
+}

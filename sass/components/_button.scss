@@ -1,0 +1,107 @@
+.btn {
+    &,
+    &:link,
+    &:visited {
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 1.5rem 4rem;
+        font-size: $default-font-size;
+        display: inline-block;
+        border-radius: 10rem;
+        transition: all .3s;
+        position: relative;
+
+        @media (max-width: 62.5em) {
+            padding: 1.5rem 2.5rem;
+        }
+
+        //Change for the <button> element
+        border: none;
+        cursor: pointer;
+    }
+
+    &:hover {
+        transform: translateY(-.3rem);
+        box-shadow: 0px 1rem 2rem rgba($color-black, .2);
+    }
+
+    &:focus,
+    &:active {
+        outline: none;
+        transform: translateY(-.1rem);
+        box-shadow: 0px .5rem 1rem rgba($color-black, .2);
+    }
+
+    &--white {
+        background-color: $color-white;
+        color: $color-grey-dark;
+    }
+
+    &--green {
+        background-color: $color-primary;
+        color: $color-white;
+    }
+    
+    &::after {
+        display: inline-block;
+        content: "";
+        width: 100%;
+        height: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
+
+    &--white::after {
+        background-color: $color-white;
+    }
+    &--green::after {
+        background-color: $color-primary-light;
+    }
+
+    &:hover::after {
+        opacity: 0;
+        transform: scaleX(1.4) scaleY(1.6);
+    }
+
+    &--animated {
+        animation: moveinBottom .5s ease-out 1s;
+        animation-fill-mode: backwards;
+    }
+}
+
+.btn-text {
+    &:link,
+    &:visited {
+        font-size: $default-font-size;
+        font-weight: 700;
+        text-transform: none;
+        color: $color-primary;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $color-primary-light;
+        padding: .7rem;
+        padding-bottom: .7rem;
+        border-radius: 0;
+        transition: all .2s;
+
+        @include respond(tab-port) {
+            padding: .8rem;
+        }
+    }
+
+    &:hover {
+        transform: translateY(-.3rem);
+        box-shadow: 0px 1rem 2rem rgba($color-black, .2);
+        background: $color-primary;
+        color: $color-white;
+    }
+
+    &:active {
+        transform: translateY(-.1rem);
+        box-shadow: 0px .5rem 1rem rgba($color-black, .2);
+    }
+}
